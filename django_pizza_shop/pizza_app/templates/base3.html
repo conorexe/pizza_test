@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Your Website Title{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+    <style>
+        html, body {
+            background-image: url("{% static 'let-waiter-decide-wholl-be-paying-group-colleagues-holding-out-their-bank-cards-to-pay-bill-cafe-let-waiter-273085432.webp' %}");
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .header {
+            background-color: #333;
+            color: #7E1600;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            flex-grow: 1;
+            text-align: center;
+        }
+        .logo img {
+            max-width: 100px;
+            height: auto;
+        }
+        
+
+        .pizza {
+            position: absolute;
+            animation: fall 5s infinite linear;
+        }
+
+        @keyframes fall {
+            0% { top: -100px; left: 100%; }
+            100% { top: 100vh; left: -100%; }
+        }
+    </style>
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            
+            background-image: url("{% static 'logop.png' %}");
+            background-size: cover; 
+            background-repeat: no-repeat; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+    
+    <div class="header">
+        <div class="search">
+            
+        </div>
+        <div class="logo">
+            <img src="{% static 'logop.png' %}">
+        </div>
+        <div class="menu">
+            
+        </div>
+    </div>
+
+    
+    {% for i in " " %}
+        {% if forloop.counter0 < 25 %}
+            <img src="{% static 'Tony_Soprano_Season_1.webp' %}" alt="Pizza" class="pizza" style="left: {{ forloop.counter0|add:"5" }}%; top: -100px;">
+        {% endif %}
+    {% endfor %}
+
+    <div class="container">
+        {% block content %}
+        
+        {% endblock %}
+    </div>
+</body>
+</html>

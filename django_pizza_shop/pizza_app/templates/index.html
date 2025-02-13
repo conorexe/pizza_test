@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static  %}
+
+
+{% block title %}Welcome to PizzaShop{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+    <div class="container-wrapper">
+        <div class="container">
+            <h1>Welcome to Tony's</h1>
+             <p>Order delicious pizzas online!</p>
+            <a href="/register" class="btn">Register</a>
+            <a href="/login" class="btn">Login</a>
+        </div>
+    </div>
+
+    <style>
+        
+        body {
+            background: none; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        /* Override styles from base.html */
+        .container {
+            background-color: transparent; 
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+        h1, p {
+            color: #333333; /* Adjust text color */
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin: 10px;
+        }
+        .btn:hover {
+            background-color: #0056b3; 
+        }
+    </style>
+{% endblock %}

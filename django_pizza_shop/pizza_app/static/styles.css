@@ -1,0 +1,19 @@
+.container-wrapper {
+    background-color: white; /* Set the background color */
+    padding: 20px; /* Add padding for spacing */
+    border: 2px solid white; /* Add a white border */
+    border-radius: 10px; /* Optional: Add border radius for rounded corners */
+}
+
+.order-another-wrapper {
+    margin-top: 20px; /* Add spacing between the "Login" link and the "Order another?" link */
+    border: 2px solid white; /* Add a white border */
+    border-radius: 10px; /* Optional: Add border radius for rounded corners */
+    display: inline-block; /* Make the wrapper behave like an inline element */
+}
+
+.order-another {
+    color: white; /* Set the text color to white */
+    padding: 5px 10px; /* Add padding for spacing */
+    text-decoration: none; /* Remove underline */
+}

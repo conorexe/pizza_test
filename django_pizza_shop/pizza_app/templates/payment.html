@@ -1,0 +1,56 @@
+{% extends 'base3.html' %}
+
+{% block title %}Welcome to PizzaShop{% endblock %}
+
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Form</title>
+    <style>
+        form {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 7px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 210px; /* Reduced width by 30% */
+            margin: auto; /* Centering the form */
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: calc(100% - 20px); /* Reduced input width by 30% */
+            padding: 8px;
+            margin-bottom: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 14px; /* Reduced font size */
+        }
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 16px;
+            font-size: 14px; /* Reduced font size */
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        <h2>Order Up!</h2>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Pay Now</button>
+    </form>
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+</body>
+</html>
+{% endblock %}
